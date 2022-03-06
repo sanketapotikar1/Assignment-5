@@ -1,0 +1,305 @@
+﻿Guvi Geeks Network Pvt Ltd.
+1. Do the below programs in anonymous function & IIFE
+
+
+   1. Print odd numbers in an array
+Ans : 
+
+Code : 
+let numbers = [1,2,3,4,5,6,7,8,9];
+
+
+let odd_number = (function(number) {
+
+  for (let i=0; i<number.length; i++)
+  {
+      if (numbers[i]%2===1)
+      {
+      console.log(numbers[i]);
+      }
+    }
+})(numbers);
+
+Output : 
+
+pratices.js:246 1
+pratices.js:246 3
+pratices.js:246 5
+pratices.js:246 7
+pratices.js:246 9
+
+
+   2. Convert all the strings to title caps in a string array
+
+Ans :
+
+code : 
+
+let String = "the sun is bright today."
+
+let titleCase = function (str) {
+  str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+  }
+  return str.join(' ');
+}(String)
+
+console.log(titleCase);
+
+
+Output : 
+The Sun Is Bright Today.
+
+
+
+   3. Sum of all numbers in an array
+Ans :
+
+
+code : 
+
+let arr = [1,2,3,4,5,6,7,8,9,10];
+
+let sum = function(array) {
+let sum = 0;
+for( let i = 0; i<array.length; i++ ) {
+sum += arr[i];
+}
+return sum;
+}(arr)
+
+console.log(sum);
+
+output :
+
+
+﻿
+pratices.js:271  55
+
+
+   4. Return all the prime numbers in an array
+
+Code :
+
+
+var array = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+function isPrime(num) {
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return num > 1;
+}
+
+console.log(array.filter(isPrime));
+
+Output :
+(4) [2, 3, 5, 7]
+
+
+
+
+   5. Return all the palindromes in an array
+
+Code :
+
+const arr = ['carecar', 1344, 12321, 'did', 'cannot'];
+const isPalindrome = el => {
+   const str = String(el);
+   let i = 0;
+   let j = str.length - 1;
+   while(i < j) {
+      if(str[i] === str[j]) {
+         i++;
+         j--;
+      }
+      else {
+         return false;
+      }
+   }
+   return true;
+};
+const findPalindrome = arr => {
+   return arr.filter(el => isPalindrome(el));
+};
+console.log(findPalindrome(arr));
+
+Output :
+(2) [12321, 'did']
+
+
+
+
+
+   6. Return median of two sorted arrays of the same size
+Ans : Not able to solve  - Face problem in logic
+
+
+
+   7. Remove duplicates from an array
+Ans : 
+
+code:
+
+let chars = ['Y', 'B', 't', 'C', 'B','t', 'C', 'O','A', 'B', 'I', 'C', 'B'];
+
+let removeDuplicates = function () {
+    let uniqueChars = [...new Set(chars)];
+
+    console.log(uniqueChars);
+}
+
+removeDuplicates()
+
+Ouput:
+(7) ['Y', 'B', 't', 'C', 'O', 'A', 'I']
+
+
+
+   8. Rotate an array by k times
+Ans :
+const rotateArray1 = function(nums, k) {
+
+  for (let i = 0; i < k; i++) {
+      nums.unshift(nums.pop());
+  }
+
+  return nums;
+}
+
+console.log(rotateArray1([1, 2, 3,4,5,6,7,8], 5))
+
+Output:
+(8) [4, 5, 6, 7, 8, 1, 2, 3]
+
+
+
+
+2. https://medium.com/@reach2arunprakash/guvi-zen-class-javascript-warm-up-programming-problems-15973c74b87f
+Ans : visted the given link and pratices problem in visual code studio.
+
+
+
+
+3. Do the below programs in arrow functions
+
+   1. Print odd numbers in an array
+Ans:
+
+Code : 
+let numbers = [1,2,3,4,5,6,7,8,9];
+
+
+let odd_number = ((number) => {
+
+  for (let i=0; i<number.length; i++)
+  {
+      if (numbers[i]%2===1)
+      {
+      console.log(numbers[i]);
+      }
+    }
+})(numbers);
+
+console.log(odd_number);
+
+Output :
+pratices.js:352 1
+pratices.js:352 3
+pratices.js:352 5
+pratices.js:352 7
+pratices.js:352 9
+
+   2. Convert all the strings to title caps in a string array
+Ans :
+
+Code :
+let String = "the sun is bright today."
+
+let titleCase =  ((str) => {
+  str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+  }
+  return str.join(' ');
+})(String)
+
+console.log(titleCase);
+
+Output: 
+The Sun Is Bright Today.
+
+
+   3. Sum of all numbers in an array
+Ans :
+
+let arr = [1,2,3,4,5,6,7,8,9,10];
+
+let sum = ((array) =>{
+let sum = 0;
+for( let i = 0; i<array.length; i++ ) {
+sum += arr[i];
+}
+return sum;
+})(arr)
+
+console.log(sum);
+
+Output: 
+55
+
+
+   4. Return all the prime numbers in an array
+Ans :
+
+Code:
+var array = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+function isPrime(num) {
+  for (let i = 2; i <= Math.sqrt(num); i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return num > 1;
+}
+
+console.log(array.filter(isPrime));
+output:
+(4) [2, 3, 5, 7]
+
+
+   5. Return all the palindromes in an array
+
+Ans :
+
+Code :
+
+const arr = ['carecar', 1344, 12321, 'did', 'cannot'];
+const isPalindrome = el => {
+   const str = String(el);
+   let i = 0;
+   let j = str.length - 1;
+   while(i < j) {
+      if(str[i] === str[j]) {
+         i++;
+         j--;
+      }
+      else {
+         return false;
+      }
+   }
+   return true;
+};
+const findPalindrome = arr => {
+   return arr.filter(el => isPalindrome(el));
+};
+console.log(findPalindrome(arr));
+
+Output:
+(2) [12321, 'did']
+
+
+4. Practice(submission not needed) - https://medium.com/@reach2arunprakash/www-guvi-io-zen-d395deec1373
+Ans : visted the given link and pratices problem in visual code studio.
